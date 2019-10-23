@@ -76,7 +76,7 @@ class CustomDataset(torch.utils.data.Dataset):
             log('read dataset (%d records)' % len(self.df))
 
         self.df = apply_dataset_policy(self.df, self.cfg.dataset_policy)
-        self.df = self.df.sample(560)
+        # self.df = self.df.sample(560)
 
     def __len__(self):
         return len(self.df)

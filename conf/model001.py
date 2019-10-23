@@ -6,8 +6,8 @@ n_fold = 5
 epoch = 3
 resume_from = None
 
-batch_size = 28
-num_workers = 4
+batch_size = 70
+num_workers = 7
 imgsize = (512, 512) #(height, width)
 
 loss = dict(

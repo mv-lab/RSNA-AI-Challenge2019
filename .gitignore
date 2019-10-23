@@ -4,3 +4,7 @@ data
 input
 model
 *.py[cod]
+*.nohup
+core.*
+apex
+bin/.nfs0000000005a3b4b7000001ba

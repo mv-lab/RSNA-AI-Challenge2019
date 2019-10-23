@@ -26,7 +26,7 @@ def get_args():
 
 def avg_predictions(results):
     outputs_all = np.array([result['outputs'] for result in results])
-    outputs = outputs_all.mean(axis=0)
+    outputs = outputs_all.mean(axis=0) #np.median(outputs_all,axis=0)
     return {
         'ids': results[0]['ids'],
         'outputs': outputs,
