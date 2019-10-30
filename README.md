@@ -15,6 +15,8 @@ This is the project for [RSNA Intracranial Hemorrhage Detection](https://www.kag
 | Backbone | Image size | LB |
 ----|----|----
 | se\_resnext50\_32x4d | 512x512 | 0.070 - 0.072 |
+| se\_resnext50\_32x4d | 1024x1025 | 0.070 - 0.071 |
+| se\_resnext101\_32x4d | 512x512 | 0.070 |
 
 
 ## Windowing
