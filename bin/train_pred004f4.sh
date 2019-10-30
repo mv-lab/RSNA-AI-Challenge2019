@@ -1,3 +1,5 @@
+
+
 set -ex
 model=model004
 gpu=0

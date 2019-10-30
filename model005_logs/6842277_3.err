@@ -1,0 +1,18 @@
+Loading module for GNU compilers
+GNU 6.4.0 is now loaded
+Loading module for Miniconda
+Miniconda 3 is now loaded
++ bash bin/predict_ensemble005.sh
++ model=model005
++ ep=1
++ tta=5
++ clip=1e-6
++ test0=./model/model005/fold0_ep1_test_tta5.pkl
++ test1=./model/model005/fold1_ep1_test_tta5.pkl
++ test2=./model/model005/fold2_ep1_test_tta5.pkl
++ test3=./model/model005/fold3_ep1_test_tta5.pkl
++ test4=./model/model005/fold4_ep1_test_tta5.pkl
++ sub=./data/submission/ensemble_model005_ep1_test_tta5.csv
++ python -m src.postprocess.make_submission --inputs '['\''./model/model005/fold0_ep1_test_tta5.pkl'\'','\''./model/model005/fold1_ep1_test_tta5.pkl'\'','\''./model/model005/fold2_ep1_test_tta5.pkl'\'','\''./model/model005/fold3_ep1_test_tta5.pkl'\'','\''./model/model005/fold4_ep1_test_tta5.pkl'\'']' --output ./data/submission/ensemble_model005_ep1_test_tta5.csv --clip 1e-6
++ kaggle competitions submit rsna-intracranial-hemorrhage-detection -m 'efficient b7 on v100 ensemble' -f ./data/submission/ensemble_model005_ep1_test_tta5.csv
+  0%|          | 0.00/20.7M [00:00<?, ?B/s]  0%|          | 8.00k/20.7M [00:00<08:54, 40.6kB/s]  1%|          | 120k/20.7M [00:00<06:20, 56.7kB/s]   2%|▏         | 344k/20.7M [00:00<04:27, 79.8kB/s]  7%|▋         | 1.38M/20.7M [00:01<03:06, 109kB/s] 17%|█▋        | 3.58M/20.7M [00:02<01:55, 155kB/s] 38%|███▊      | 7.85M/20.7M [00:02<01:01, 221kB/s] 53%|█████▎    | 11.0M/20.7M [00:02<00:32, 314kB/s] 68%|██████▊   | 14.0M/20.7M [00:02<00:15, 446kB/s] 82%|████████▏ | 17.0M/20.7M [00:02<00:06, 632kB/s] 97%|█████████▋| 20.1M/20.7M [00:02<00:00, 892kB/s]100%|██████████| 20.7M/20.7M [00:05<00:00, 4.01MB/s]

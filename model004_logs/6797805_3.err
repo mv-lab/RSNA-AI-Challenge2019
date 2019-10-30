@@ -1,0 +1,23 @@
+Loading module for GNU compilers
+GNU 6.4.0 is now loaded
+Loading module for Miniconda
+Miniconda 3 is now loaded
++ bash bin/train_pred004f3.sh
++ model=model004
++ gpu=0
++ fold=3
++ conf=./conf/model004.py
++ python -m src.cnn.main train ./conf/model004.py --fold 3 --gpu 0
+/home/xum/.conda/envs/kaggler/lib/python3.7/site-packages/torch/optim/lr_scheduler.py:73: UserWarning: Seems like `optimizer.step()` has been overridden after learning rate scheduler initialization. Please, make sure to call `optimizer.step()` before `lr_scheduler.step()`. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  "https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate", UserWarning)
++ ep=2
++ tta=5
++ clip=1e-6
++ snapshot=./model/model004/fold3_ep2.pt
++ valid=./model/model004/fold3_ep2_valid_tta5.pkl
++ test=./model/model004/fold3_ep2_test_tta5.pkl
++ sub=./data/submission/model004_fold3_ep2_test_tta5.csv
++ python -m src.cnn.main test ./conf/model004.py --snapshot ./model/model004/fold3_ep2.pt --output ./model/model004/fold3_ep2_test_tta5.pkl --n-tta 5 --fold 3 --gpu 0
++ python -m src.postprocess.make_submission --input ./model/model004/fold3_ep2_test_tta5.pkl --output ./data/submission/model004_fold3_ep2_test_tta5.csv --clip 1e-6
++ kaggle competitions submit rsna-intracranial-hemorrhage-detection -m 'se resnet101 on v100 lr3e-6' -f ./data/submission/model004_fold3_ep2_test_tta5.csv
+  0%|          | 0.00/20.4M [00:00<?, ?B/s]  0%|          | 8.00k/20.4M [00:00<10:05, 35.3kB/s]  0%|          | 80.0k/20.4M [00:00<07:15, 48.9kB/s]  2%|▏         | 368k/20.4M [00:00<05:03, 69.2kB/s]   7%|▋         | 1.46M/20.4M [00:00<03:21, 98.4kB/s] 10%|▉         | 2.02M/20.4M [00:01<02:24, 133kB/s]  22%|██▏       | 4.52M/20.4M [00:01<01:27, 190kB/s] 35%|███▌      | 7.19M/20.4M [00:01<00:51, 270kB/s] 67%|██████▋   | 13.7M/20.4M [00:01<00:18, 385kB/s] 95%|█████████▍| 19.4M/20.4M [00:02<00:01, 548kB/s]100%|██████████| 20.4M/20.4M [00:04<00:00, 4.61MB/s]

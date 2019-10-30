@@ -1,0 +1,19 @@
+#!/bin/bash
+#SBATCH --job-name EfficientNet
+#SBATCH --array=0-5
+#SBATCH --time=3-00:00:00
+#SBATCH -o logs/%A_%a.out
+#SBATCH -e logs/%A_%a.err
+#SBATCH --gres=gpu:v100:1
+#SBATCH --cpus-per-task=9
+#SBATCH --mem 10GB
+##SBATCH --qos=ivul
+
+module load miniconda
+echo `hostname`
+source activate /home/xum/.conda/envs/kaggler 
+
+set -ex
+
+bash bin/predict_ensemble005.sh
+#bash bin/train_pred005f${SLURM_ARRAY_TASK_ID}.sh

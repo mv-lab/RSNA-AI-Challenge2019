@@ -2,7 +2,7 @@ set -ex
 
 model=model002
 gpu=0
-ep=1
+ep=2
 tta=5
 clip=1e-6
 

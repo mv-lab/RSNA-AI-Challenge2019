@@ -34,9 +34,9 @@ def apply_window_policy(image, row, policy):
         image2 = (image2 - (-20)) / 200
         image3 = (image3 - (-150)) / 380
         image = np.array([
-            image1 - image1.mean(),
-            image2 - image2.mean(),
-            image3 - image3.mean(),
+            image1,# - image1.mean(),
+            image2,# - image2.mean(),
+            image3, # - image3.mean(),
         ]).transpose(1,2,0)
     else:
         raise

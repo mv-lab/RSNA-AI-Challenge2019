@@ -1,0 +1,6 @@
+Loading module for GNU compilers
+GNU 6.4.0 is now loaded
+Loading module for Miniconda
+Miniconda 3 is now loaded
++ bash bin/train_pred005f5.sh
+bash: bin/train_pred005f5.sh: No such file or directory

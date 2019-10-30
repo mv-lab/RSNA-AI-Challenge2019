@@ -8,6 +8,7 @@ from torch.optim import lr_scheduler
 import albumentations as A
 from albumentations.pytorch import ToTensor
 import pretrainedmodels
+from efficientnet_pytorch import EfficientNet
 
 from .dataset.custom_dataset import CustomDataset
 from .transforms.transforms import RandomResizedCrop
@@ -47,6 +48,13 @@ def get_model(cfg):
         model = torch.hub.load('facebookresearch/WSL-Images', cfg.model.name)
         model.fc = torch.nn.Linear(2048, cfg.model.n_output)
         return model
+
+    elif cfg.model.name in ['efficientnet-b7']:
+        model = EfficientNet.from_pretrained(cfg.model.name, cfg.model.n_output)
+        return model
+
+	#fixresnext 
+ 	#elif cfg.model.name in ['']
 
     try:
         model_func = pretrainedmodels.__dict__[cfg.model.name]

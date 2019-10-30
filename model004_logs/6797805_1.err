@@ -1,0 +1,23 @@
+Loading module for GNU compilers
+GNU 6.4.0 is now loaded
+Loading module for Miniconda
+Miniconda 3 is now loaded
++ bash bin/train_pred004f1.sh
++ model=model004
++ gpu=0
++ fold=1
++ conf=./conf/model004.py
++ python -m src.cnn.main train ./conf/model004.py --fold 1 --gpu 0
+/home/xum/.conda/envs/kaggler/lib/python3.7/site-packages/torch/optim/lr_scheduler.py:73: UserWarning: Seems like `optimizer.step()` has been overridden after learning rate scheduler initialization. Please, make sure to call `optimizer.step()` before `lr_scheduler.step()`. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  "https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate", UserWarning)
++ ep=2
++ tta=5
++ clip=1e-6
++ snapshot=./model/model004/fold1_ep2.pt
++ valid=./model/model004/fold1_ep2_valid_tta5.pkl
++ test=./model/model004/fold1_ep2_test_tta5.pkl
++ sub=./data/submission/model004_fold1_ep2_test_tta5.csv
++ python -m src.cnn.main test ./conf/model004.py --snapshot ./model/model004/fold1_ep2.pt --output ./model/model004/fold1_ep2_test_tta5.pkl --n-tta 5 --fold 1 --gpu 0
++ python -m src.postprocess.make_submission --input ./model/model004/fold1_ep2_test_tta5.pkl --output ./data/submission/model004_fold1_ep2_test_tta5.csv --clip 1e-6
++ kaggle competitions submit rsna-intracranial-hemorrhage-detection -m 'se resnet101 on v100 lr3e-6' -f ./data/submission/model004_fold1_ep2_test_tta5.csv
+  0%|          | 0.00/20.5M [00:00<?, ?B/s]  0%|          | 8.00k/20.5M [00:00<24:16, 14.8kB/s]  0%|          | 48.0k/20.5M [00:00<17:27, 20.5kB/s]  0%|          | 80.0k/20.5M [00:00<12:50, 27.8kB/s]  1%|          | 160k/20.5M [00:01<09:11, 38.7kB/s]   2%|▏         | 376k/20.5M [00:01<06:27, 54.5kB/s]  4%|▍         | 880k/20.5M [00:01<04:27, 77.1kB/s]  6%|▌         | 1.28M/20.5M [00:03<03:24, 98.6kB/s]  9%|▉         | 1.90M/20.5M [00:03<02:20, 139kB/s]  15%|█▌        | 3.17M/20.5M [00:03<01:32, 197kB/s] 30%|███       | 6.23M/20.5M [00:03<00:53, 280kB/s] 41%|████▏     | 8.48M/20.5M [00:04<00:32, 392kB/s] 60%|██████    | 12.3M/20.5M [00:04<00:15, 556kB/s] 77%|███████▋  | 15.8M/20.5M [00:04<00:06, 784kB/s] 94%|█████████▍| 19.3M/20.5M [00:04<00:01, 1.10MB/s]100%|██████████| 20.5M/20.5M [00:06<00:00, 3.17MB/s]

@@ -1,0 +1,17 @@
+gpu609-02
+['/home/xum/kaggle/kaggle-rsna-intracranial-hemorrhage/src/postprocess/make_submission.py', '--inputs', "['./model/model005/fold0_ep1_test_tta5.pkl','./model/model005/fold1_ep1_test_tta5.pkl','./model/model005/fold2_ep1_test_tta5.pkl','./model/model005/fold3_ep1_test_tta5.pkl','./model/model005/fold4_ep1_test_tta5.pkl']", '--output', './data/submission/ensemble_model005_ep1_test_tta5.csv', '--clip', '1e-6']
+loading ./model/model005/fold0_ep1_test_tta5.pkl...
+loading ./model/model005/fold1_ep1_test_tta5.pkl...
+loading ./model/model005/fold2_ep1_test_tta5.pkl...
+loading ./model/model005/fold3_ep1_test_tta5.pkl...
+loading ./model/model005/fold4_ep1_test_tta5.pkl...
+clip values by 1.000000e-06
+                                   ID     Label
+471265  ID_d47269109_intraparenchymal  0.000100
+471266  ID_d47269109_intraventricular  0.000262
+471267      ID_d47269109_subarachnoid  0.000984
+471268          ID_d47269109_subdural  0.000215
+471269               ID_d47269109_any  0.001103
+saved to ./data/submission/ensemble_model005_ep1_test_tta5.csv
+Warning: Your Kaggle API key is readable by other users on this system! To fix this, you can run 'chmod 600 /home/xum/.kaggle/kaggle.json'
+403 - Your team has used its submission allowance (5 of 5). This resets at midnight UTC (1.9 hours from now).

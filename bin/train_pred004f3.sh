@@ -1,6 +1,8 @@
+
+
 set -ex
 model=model004
-gpu=3
+gpu=0
 fold=3
 conf=./conf/${model}.py
 
