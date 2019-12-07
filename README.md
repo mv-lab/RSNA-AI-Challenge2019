@@ -2,6 +2,22 @@
 
 This is the project for [RSNA Intracranial Hemorrhage Detection](https://www.kaggle.com/c/rsna-intracranial-hemorrhage-detection) hosted on Kaggle in 2019.
 
+<img src="https://i.ibb.co/8m4Bnzr/Screenshot-from-2019-12-07-07-41-47.png" alt="Screenshot-from-2019-12-07-07-41-47" border="0">
+<img src="https://i.ibb.co/YWmkWQr/Screenshot-from-2019-12-07-07-40-52.png" alt="Screenshot-from-2019-12-07-07-40-52" border="0">
+
+**Team**
+- [Frost](https://cemse.kaust.edu.sa/vcc/people/person/mengmeng-xu) from [KAUST](https://cemse.kaust.edu.sa/vcc)
+- [Sally](https://www.kaggle.com/sallyqu) from [KAUST](https://cemse.kaust.edu.sa/vcc)
+- [Marcos V. aka Nanashi (me)](https://www.kaggle.com/jesucristo) 
+
+**Final Solution**
+EfficientNet b7. 5-folds. Dice images + preprocessing.
+Final position 65th of 1345 teams.
+Check our models at [conf](conf/) directory.
+
+**Official baseline/ starter code from @Aappian42**: https://github.com/appian42/kaggle-rsna-intracranial-hemorrhage
+
+<br>
 
 ## Requirements
 
